@@ -1,8 +1,7 @@
+__all__ = ["get_stock_report_table"]
+
 import tushare as ts
 import json
-
-def get_stock_report_json(year, season):
-    return ts.get_report_data(int(year), int(season)).to_dict()
 
 
 def get_stock_report_table(year, season):

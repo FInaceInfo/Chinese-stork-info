@@ -1,12 +1,6 @@
-__all__ = ["get_stock_basics_json",
-           "get_stock_basics_csv", "get_stock_basics_csv"]
+__all__ = ["get_stock_basics_table"]
 
 import tushare as ts
-
-
-def get_stock_basics_json():
-    return ts.get_stock_basics().to_json()
-
 
 def get_stock_basics_table():
     TRANS = {"code": "代码",
@@ -37,7 +31,3 @@ def get_stock_basics_table():
     head = [TRANS.get(i) for i in total[0].split(",")]
     body = [line.split(",") for line in total[1:]]
     return {"head": head, "body": body}
-
-
-def get_stock_basics_csv():
-    return ts.get_stock_basics().to_csv()
