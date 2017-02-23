@@ -1,3 +1,6 @@
+"""获取各个股票的基本数据
+"""
+
 __all__ = ["StocksBasic"]
 from .stock_basic_info import *
 from flask_socketio import Namespace, emit
